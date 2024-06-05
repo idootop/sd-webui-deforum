@@ -246,7 +246,7 @@ def process_with_controlnet(p, args, anim_args, controlnet_args, root, parseq_ad
             cn_maskframes = os.path.join(args.outdir, f'controlnet_{cn_idx}_maskframes')  # set mask frames folder path
             if os.path.exists(cn_maskframes):
                 if count_files_in_folder(cn_maskframes) == 1:
-                    cn_mask_frame_path = os.path.join(cn_inputframes, "000000000.jpg")
+                    cn_mask_frame_path = os.path.join(cn_maskframes, "000000000.jpg")
                     print(f'Reading ControlNet *static* mask frame at {cn_mask_frame_path}')
                 else:
                     cn_mask_frame_path = os.path.join(args.outdir, f'controlnet_{cn_idx}_maskframes', f"{frame_idx:09}.jpg")
